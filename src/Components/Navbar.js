@@ -22,16 +22,21 @@ const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const menuOptions = [
     {
-      text: "Home",
+      text: "News Site",
       icon: <HomeIcon />,
+      to: "https://rb.gy/34j4h0",
     },
     {
-      text: "About",
+      text: "About s1 ",
       icon: <InfoIcon />,
+      to: "https://rb.gy/6p487u",
+  
     },
     {
-      text: "Testimonials",
+      text: "search 2",
       icon: <CommentRoundedIcon />,
+      to: "https://rb.gy/inchxn",
+      
     },
     {
       text: "Contact",
@@ -51,11 +56,8 @@ const Navbar = () => {
        <Link to="/">Home</Link>  
        <Link to="/about">About</Link>  
        <Link to="/services">services</Link>  
-       <Link to="https://rb.gy/34j4h0">Site l</Link>
-       <Link to="/about">site</Link> 
-       <Link to="https://rb.gy/oejpwe">site s</Link> 
-
-  
+        <Link to="https://rb.gy/34j4h0">Site</Link>
+    <Link to="/about">site</Link> 
         <a href="">
           <BsCart2 className="navbar-cart-icon" />
         </a>
@@ -71,16 +73,17 @@ const Navbar = () => {
           onClick={() => setOpenMenu(false)}
           onKeyDown={() => setOpenMenu(false)}
         >
+        
           <List>
-            {menuOptions.map((item) => (
-              <ListItem key={item.text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>{item.icon}</ListItemIcon>
-                  <ListItemText primary={item.text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
+  {menuOptions.map((item) => (
+    <ListItem key={item.text} disablePadding>
+      <ListItemButton component={Link} to={item.to}>
+        <ListItemIcon>{item.icon}</ListItemIcon>
+        <ListItemText primary={item.text} />
+      </ListItemButton>
+    </ListItem>
+  ))}
+</List>
           <Divider />
         </Box>
       </Drawer>
