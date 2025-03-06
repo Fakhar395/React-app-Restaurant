@@ -51,8 +51,11 @@ const Navbar = () => {
        <Link to="/">Home</Link>  
        <Link to="/about">About</Link>  
        <Link to="/services">services</Link>  
-        <Link to="https://rb.gy/34j4h0">Site</Link>
-    <Link to="/about">site</Link> 
+       <Link to="https://rb.gy/34j4h0">Site l</Link>
+       <Link to="/about">site</Link> 
+       <Link to="https://rb.gy/oejpwe">site s</Link> 
+
+  
         <a href="">
           <BsCart2 className="navbar-cart-icon" />
         </a>
