@@ -29,7 +29,7 @@ const Footer = () => {
           <span>Work</span>
         </div>
         <div className="footer-section-columns">
-          <span>+92 3247597250</span>
+          <span>+91 2354 365 374</span>
           <span>hello2331@food.com</span>
           <span>press424@food.com</span>
           <span>contact424@food.com</span>
