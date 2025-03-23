@@ -1,0 +1,41 @@
+[
+    {
+        "domain": ".google.com",
+        "expirationDate": 1757815736.667691,
+        "hostOnly": false,
+        "httpOnly": true,
+        "name": "AEC",
+        "path": "/",
+        "sameSite": "lax",
+        "secure": true,
+        "session": false,
+        "storeId": null,
+        "value": "AVcja2d1G634iNohgFQSRXRe42sFtjjzJ5jr0Af4WSQqpHFTcd9Q8zuZ3Q"
+    },
+    {
+        "domain": ".google.com",
+        "expirationDate": 1758074938.556001,
+        "hostOnly": false,
+        "httpOnly": true,
+        "name": "NID",
+        "path": "/",
+        "sameSite": "no_restriction",
+        "secure": true,
+        "session": false,
+        "storeId": null,
+        "value": "522=J8SVxJRadUo1owkGV9TQHV0C3QR_0-rg3O7WuSKW58yRsBW2h-6kvI7I6vSp_mxNoYGQbPefK76Mgd4wF4M6UuInDJORQTJfj_LfZKS0vxto4vQgDckQOP2TnXFKaA4o3JKgbTc0lbQuDxNNOGE3dO_E3ni_xDkijVHvSgbMptQwr4zcmXREVYeNMz87WjiNxPaLHIuBAiXdk2Rg6hrs-dyaew"
+    },
+    {
+        "domain": "www.google.com",
+        "expirationDate": 1742264347,
+        "hostOnly": true,
+        "httpOnly": false,
+        "name": "DV",
+        "path": "/",
+        "sameSite": null,
+        "secure": false,
+        "session": false,
+        "storeId": null,
+        "value": "E-KBajy3rgMYQKmMXZTmgKsF4fpGWhk"
+    }
+]

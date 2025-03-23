@@ -12,6 +12,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
+import { useNavigate } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
@@ -47,6 +48,11 @@ const Navbar = () => {
       icon: <ShoppingCartRoundedIcon />,
     },
   ];
+  const navigate = useNavigate(); // Hook to navigate programmatically
+
+  const handleRedirect = () => {
+      navigate("/redirect"); // Redirect to the /redirect page
+  };
   return (
     <nav>
       <div className="nav-logo-container">
@@ -56,12 +62,15 @@ const Navbar = () => {
        <Link to="/">Home</Link>  
        <Link to="/about">About</Link>  
        <Link to="/services">services</Link>  
-        <Link to="https://rb.gy/34j4h0">Site</Link>
-    <Link to="/about">site</Link> 
+        {/* <Link to="https://rb.gy/34j4h0">Site</Link> */}
+    {/* <Link to="/about">site</Link>  */}
         <a href="">
           <BsCart2 className="navbar-cart-icon" />
         </a>
         <button className="primary-button">Bookings Now</button>
+        <button className="primary-button" onClick={handleRedirect}>check</button>
+      
+        
       </div>
       <div className="navbar-menu-container">
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
