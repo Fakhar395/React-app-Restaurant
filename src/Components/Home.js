@@ -3,8 +3,14 @@ import BannerBackground from "../Assets/home-banner-background.png";
 import BannerImage from "../Assets/home-banner-image.png";
 import Navbar from "./Navbar";
 import { FiArrowRight } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 const Home = (props) => {
+  const navigate = useNavigate(); // Hook to navigate programmatically
+  
+    const handleRedirect = () => {
+        navigate("/redirect"); // Redirect to the /redirect page
+    };
   return (
     <div className="home-container">
       <Navbar />
@@ -23,6 +29,7 @@ const Home = (props) => {
           <button className="secondary-button">
             Order Now <FiArrowRight />{" "}
           </button>
+          <button className="primary-button" onClick={handleRedirect}>check</button>
         </div>
         <div className="home-image-section">
           <img src={BannerImage} alt="" />
