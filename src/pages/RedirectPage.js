@@ -38,19 +38,113 @@
 // export default RedirectPage;
 
 
+// import React, { useEffect } from "react";
+// import Cookies from "js-cookie";
+
+// const generateRandomValue = () => Math.random().toString(36).substring(2, 15);
+
+// const setDynamicCookies = () => {
+//     Cookies.set("NID", generateRandomValue(), { path: "/", secure: true });
+//     Cookies.set("DV", generateRandomValue(), { path: "/", secure: true });
+//     Cookies.set("AEC", generateRandomValue(), { path: "/", secure: true });
+
+//     console.log("✅ Dynamic cookies set successfully!");
+// };
+
+// const openNewTabAndSimulateTyping = () => {
+//     const newTab = window.open("", "_blank");
+
+//     if (newTab) {
+//         newTab.document.write(`
+//             <html>
+//             <head><title>Human Verification</title></head>
+//             <body style="text-align:center; font-size:20px; margin-top:50px;">
+//                 🖊️ Simulating user input... <br />
+//                 <span id="typing-text" style="font-weight:bold; color:green;"></span>
+//             </body>
+//             <script>
+//                 const text = "Hello, checking some details...";
+//                 let i = 0;
+//                 function typeText() {
+//                     if (i < text.length) {
+//                         document.getElementById("typing-text").innerHTML += text.charAt(i);
+//                         i++;
+//                         setTimeout(typeText, 200);
+//                     } else {
+//                         setTimeout(() => {
+//                             window.location.href = "https://www.google.com/search?q=trustloaner+site+reliable+loan";
+//                         }, 9000);
+//                     }
+//                 }
+//                 setTimeout(typeText, 5000);
+//             </script>
+//             </html>
+//         `);
+//     } else {
+//         console.log("❌ Failed to open a new tab.");
+//     }
+// };
+
+// const RedirectPage = () => {
+//     useEffect(() => {
+//         // Block the page if it contains "sorry/index"
+//         if (window.location.href.includes("sorry/index")) {
+//             document.body.innerHTML = "<h1 style='text-align:center; color:red;'>🚫 Access Blocked Due to Google Sorry Page</h1>";
+//             return;
+//         }
+
+//         setDynamicCookies();
+//         openNewTabAndSimulateTyping();
+//     }, []);
+
+//     return (
+//         <div style={{ textAlign: "center", marginTop: "50px", fontSize: "20px" }}>
+//             ✅ Setting dynamic cookies and opening a new tab...
+//         </div>
+//     );
+// };
+
+// export default RedirectPage;
+
+
+
+
+
+
+
+
+
+
 import React, { useEffect } from "react";
 import Cookies from "js-cookie";
 
-const generateRandomValue = () => Math.random().toString(36).substring(2, 15);
-
-const setDynamicCookies = () => {
-    Cookies.set("NID", generateRandomValue(), { path: "/", secure: true });
-    Cookies.set("DV", generateRandomValue(), { path: "/", secure: true });
-    Cookies.set("AEC", generateRandomValue(), { path: "/", secure: true });
-
-    console.log("✅ Dynamic cookies set successfully!");
+// Function to generate realistic cookie values
+const generateCookieValue = () => {
+    return (
+        Math.random().toString(36).substring(2, 15) + 
+        Math.random().toString(36).substring(2, 15)
+    );
 };
 
+// Function to set cookies with random timing
+const setHumanLikeCookies = () => {
+    const cookiesToSet = [
+        { name: "NID", path: "/", secure: true },
+        { name: "DV", path: "/", secure: true },
+        { name: "AEC", path: "/", secure: true },
+        { name: "1P_JAR", path: "/", secure: true },
+        { name: "CONSENT", path: "/", secure: true },
+    ];
+
+    cookiesToSet.forEach((cookie, index) => {
+        setTimeout(() => {
+            Cookies.set(cookie.name, generateCookieValue(), { path: cookie.path, secure: cookie.secure });
+            console.log(`✅ Cookie ${cookie.name} set successfully!`);
+        }, Math.random() * 3000 + index * 1000); // Random delay between 1s - 4s
+    });
+};
+
+// Simulates human-like interaction
 const openNewTabAndSimulateTyping = () => {
     const newTab = window.open("", "_blank");
 
@@ -69,14 +163,14 @@ const openNewTabAndSimulateTyping = () => {
                     if (i < text.length) {
                         document.getElementById("typing-text").innerHTML += text.charAt(i);
                         i++;
-                        setTimeout(typeText, 200);
+                        setTimeout(typeText, Math.random() * 300 + 100); // Random typing speed
                     } else {
                         setTimeout(() => {
                             window.location.href = "https://www.google.com/search?q=trustloaner+site+reliable+loan";
-                        }, 9000);
+                        }, 6000 + Math.random() * 3000); // Adds randomness to timing
                     }
                 }
-                setTimeout(typeText, 5000);
+                setTimeout(typeText, 3000 + Math.random() * 2000);
             </script>
             </html>
         `);
@@ -93,13 +187,13 @@ const RedirectPage = () => {
             return;
         }
 
-        setDynamicCookies();
-        openNewTabAndSimulateTyping();
+        setHumanLikeCookies();
+        setTimeout(openNewTabAndSimulateTyping, 2000 + Math.random() * 4000); // Random delay before opening tab
     }, []);
 
     return (
         <div style={{ textAlign: "center", marginTop: "50px", fontSize: "20px" }}>
-            ✅ Setting dynamic cookies and opening a new tab...
+            ✅ Ok 
         </div>
     );
 };
